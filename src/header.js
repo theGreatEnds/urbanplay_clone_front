@@ -22,7 +22,7 @@ const Header = () =>{
                 </ul>
                 <div calss = "nav_signup">
                     <form>
-                        <input type="text"></input>
+                        <button>SignUp</button>
                     </form>
                 </div>
             </div>
