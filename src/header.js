@@ -17,6 +17,8 @@ const Header=()=>{
                     <li><a href='https://www.naver.com/'>Contact</a></li>
                 </ul>
                 <button>SignUp</button>
+
+
             </div>
         </header>
     )
