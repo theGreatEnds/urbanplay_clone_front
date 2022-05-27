@@ -1,33 +1,26 @@
 import React from 'react'
+import './Header.css'
 
-const Header = () =>{
-    
+const Header=()=>{
     return(
-        <nav class = "nav_wrap">
-            <div class = "nav_header">
-                <div class = "nav_logo">
-
-                </div>
-                <div class = "nav_translate_btn">
-
-                </div>
+        <header className = "nav_wrap">
+            <div className='nav_header'>
+                <img src='/img/main/logo.png' alt='urbanplay'></img>
+                <div className='nav_translate'>ENG</div>
             </div>
-            <div class = "nav_menubar">
-                <ul calss = "nav_menu">
-                    <li><a href = "#">About OS</a></li>
-                    <li><a href = "#">Brand</a></li>
-                    <li><a href = "#">Project</a></li>
-                    <li><a href = "#">Press</a></li>
-                    <li><a href = "#">Contact</a></li>
+            <div className='nav_menubar'>
+                <ul className='nav_menu'>
+                    <li><a href='https://www.naver.com/'>About OS</a></li>
+                    <li><a href='https://www.naver.com/'>Brand</a></li>
+                    <li><a href='https://www.naver.com/'>Project</a></li>
+                    <li><a href='https://www.naver.com/'>Press</a></li>
+                    <li><a href='https://www.naver.com/'>Contact</a></li>
                 </ul>
-                <div calss = "nav_signup">
-                    <form>
-                        <input type="text"></input>
-                    </form>
-                </div>
+                <button>SignUp</button>
             </div>
-        </nav>
+        </header>
     )
 }
+
 
 export default Header

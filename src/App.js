@@ -1,15 +1,24 @@
-// import logo from './logo.svg';
-
 import React from "react";
-import Header from "./header"
+import {Reset} from 'styled-reset'
+
+import Main from "./Main"
+import Header from "./Header"
+
 
 function App() {
   
+
+  
   return (
     <>
-    <div>안녕
-    </div>
-    <Header></Header>
+    <Reset/>
+    
+    <a href="#여기로">여기로</a>
+    <Main/>
+    <Main/>
+    <p id="여기로">여기</p>
+    <Main/>
+    <Header/>
     </>
     
    
