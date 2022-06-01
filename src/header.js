@@ -39,6 +39,7 @@ const Header=()=>{
                 <a className='menu_login' href ="/signup">
                     <span className='menu_login_text'>SignUp</span>
                 </a>
+
             </div>
         </header>
     )
