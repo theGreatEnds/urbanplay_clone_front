@@ -2,11 +2,17 @@ import React from "react"
 import './Main.css'
 
 
-const Main = ()=>{
+const Main = ({imgurl,index,children})=>{
+    const css = {
+        backgroundImage:`url(${imgurl})`
+    }
     
     return(
-        // <img className="bg" src={imgURL} alt="urbanplay"></img>
-        <div className="bg"></div>
+        <>
+        <div className="bg" id={index} style={css}>
+        {children}
+        </div>
+        </>
     )
 }
 

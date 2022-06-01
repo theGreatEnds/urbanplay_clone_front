@@ -1,0 +1,24 @@
+.SideUl{
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    right: 5vw;
+    
+}
+
+.SideLi{
+    height: 10px;
+}
+
+.SideIndex.active{
+    background-color: white;
+}
+
+.SideIndex{
+    display: block;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 5px;
+    height: 5px;
+}
+
