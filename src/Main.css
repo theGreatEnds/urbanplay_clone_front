@@ -1,8 +1,15 @@
 .bg{
-    background-image:url("https://cdn.imweb.me/thumbnail/20210818/cb7dd9025a008.png") ;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 722px;
     background-position: 50% 50%;
+}
+
+.text_wrap{
+    position: absolute;
+    width: 270px;
+    margin-top: 200px;
+    color: white;
+    word-break: break-all;
 }
