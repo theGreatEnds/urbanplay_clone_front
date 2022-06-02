@@ -1,28 +1,48 @@
-import React from 'react'
-import './Header.css'
+import React  from 'react';
+import './Header.css';
 
 const Header=()=>{
     return(
         <header className = "nav_wrap">
-            <div className='nav_header'>
-                <img src='/img/main/logo.png' alt='urbanplay'></img>
-                <div className='nav_translate'>ENG</div>
+            <div className='header'>
+                <img className='header_logo' src='/img/main/logo.png' alt='urbanplay'></img>
+                <div className='translate'>ENG</div>
             </div>
-            <div className='nav_menubar'>
-                <ul className='nav_menu'>
-                    <li><a href='https://www.naver.com/'>About OS</a></li>
-                    <li><a href='https://www.naver.com/'>Brand</a></li>
-                    <li><a href='https://www.naver.com/'>Project</a></li>
-                    <li><a href='https://www.naver.com/'>Press</a></li>
-                    <li><a href='https://www.naver.com/'>Contact</a></li>
+            <div className='menubar'>
+                <ul className='menu_ul'>
+                    <li className='menu_li'>
+                        <a className='menu_name' href='/aboutos'>
+                            About OS
+                        </a>
+                    </li>
+                    <li className='menu_li'>
+                        <a className='menu_name' href='/brand'>
+                            Brand
+                        </a>
+                    </li>
+                    <li className='menu_li'>
+                        <a className='menu_name' href='/project'>
+                            Project
+                        </a>
+                    </li>
+                    <li className='menu_li'>
+                        <a className='menu_name' href='/press'>
+                            Press
+                        </a>
+                    </li>
+                    <li className='menu_li'>
+                        <a className='menu_name' href='/contact'>
+                            Contact
+                        </a>
+                    </li>
                 </ul>
-                <button>SignUp</button>
-
-
+                <a className='menu_login' href ="/signup">
+                    <span className='menu_login_text'>SignUp</span>
+                </a>
             </div>
         </header>
     )
 }
 
 
-export default Header
+export default Header;
