@@ -8,7 +8,7 @@ const MainText=({title_txt,content_txt})=>{
             <h2>
                 {title_txt}
             </h2>
-            <span>
+            <span className="content">
                 {content_txt}
             </span>
         </div>
