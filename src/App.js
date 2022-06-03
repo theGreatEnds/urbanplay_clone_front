@@ -1,6 +1,7 @@
 import React from "react";
 import {Reset} from 'styled-reset'
 
+
 import Main from "./Main"
 import MainText from "./MainText";
 import Header from "./Header"
@@ -9,8 +10,10 @@ import SideIndex from "./SideIndex";
 
 
 function App() {
+  
   const http="https://cdn.imweb.me/thumbnail/"
   
+
   return (
     <>
     <Reset/>
@@ -33,6 +36,8 @@ function App() {
     </Main>
     <Main index={6}>
     </Main>
+    <button className="target">버튼</button>
+    
     </>
     
    
