@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './sign.css'
 
 
@@ -14,9 +15,9 @@ const Login = ()=>{
       </form>
       <div id='moresign'>   
       <ul>
-      <li className='moresign_li'><a href="#!" >비밀번호 찾기  </a></li><li className='moresign_li'></li> 
-      <li className='moresign_li'><a href="#!" >&nbsp; 아이디 찾기</a></li><li className='moresign_li'></li> 
-      <li className='moresign_li'><a href="#!" >&nbsp; 회원가입</a></li> 
+      <Link to='/Find'><li className='moresign_li'>비밀번호 찾기</li></Link>
+      <li className='moresign_li'></li> 
+      <Link to='/Signup'><li className='moresign_li'>회원가입</li></Link>
       </ul> 
       <br/>
    <div> 

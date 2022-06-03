@@ -1,4 +1,5 @@
 import React  from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header=()=>{
@@ -36,9 +37,9 @@ const Header=()=>{
                         </a>
                     </li>
                 </ul>
-                <a className='menu_login' href ="/signup">
+                <Link to='/Login' className='menu_login'>
                     <span className='menu_login_text'>SignUp</span>
-                </a>
+                </Link>
             </div>
         </header>
     )
