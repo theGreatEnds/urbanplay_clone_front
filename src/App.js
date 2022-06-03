@@ -1,19 +1,16 @@
 import React , { Component } from "react";
 import {Reset} from 'styled-reset';
 
-import Main from "./Main";
-import MainText from "./MainText";
-import Header from "./Header";
-import SideIndex from "./SideIndex";
+
+
 
 
 function App() {
   const http="https://cdn.imweb.me/thumbnail/"
-
+  
   return (
     <>
     <Reset/>
-  
     <Header/>
     <SideIndex/>
     
