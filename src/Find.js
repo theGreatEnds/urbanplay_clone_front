@@ -8,7 +8,7 @@ const Find = ()=>{
 return(
 
 <div id="sign" >
-<form>
+<form action="" method="post" name="findPW">
 <div class="find">
 <label for="id">아이디 입력 : </label>
 <input type="id" name="id"  /> <br/>

@@ -5,7 +5,7 @@ import './Login.css'
 const Login = ()=>{
     return(
        <div id="sign" >
-      <form>
+      <form  action="" method="post" name="signin" >
           <label for="id">아이디 &nbsp;&nbsp; </label> 
           <input type="id" name="id"  /> <br/>
           <label for="password">비밀번호 </label>
