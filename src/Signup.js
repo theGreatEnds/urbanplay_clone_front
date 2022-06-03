@@ -1,9 +1,9 @@
 import React from 'react'
-import './Signup.css'
+import './sign.css'
 
 const Signup = ()=>{
 return(
-<div id="sign" >
+<div className="sign" >
 <form  action="" method="post" name="signup" onsubmit="">
       <label for="id">아이디 </label>
       <input type="id" name="id"  /> <br/>

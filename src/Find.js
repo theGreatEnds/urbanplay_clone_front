@@ -1,26 +1,22 @@
 import React from 'react'
 
-import './Find.css'
-
-
+import './sign.css'
 const Find = ()=>{
 
 return(
 
-<div id="sign" >
+<div className="sign" >
 <form action="" method="post" name="findPW">
-<div class="find">
+
 <label for="id">아이디 입력 : </label>
 <input type="id" name="id"  /> <br/>
-</div>
 
-<div class="find">
 <label for="name">이름 입력  : </label>
 <input type="text" name="name"  /> <br/>
-</div>
+
 
 <br/>
-<input type="button" value="find password" id="RegistBtn" />
+<input type="button" value="find password" id="RegistBtn" style={{marginTop: '150px;'}} />
 </form>
 </div>
 )
