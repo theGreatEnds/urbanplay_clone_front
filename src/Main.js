@@ -6,7 +6,7 @@ const Main = ({imgurl,index,children})=>{
     const css = {
         backgroundImage:`url(${imgurl})`
     }
-    
+
     return(
         <>
         <div className="bg" id={index} style={css}>
@@ -15,5 +15,4 @@ const Main = ({imgurl,index,children})=>{
         </>
     )
 }
-
 export default Main

@@ -1,0 +1,56 @@
+.sign{
+  margin: 200px calc((100% - 448px) / 2);
+  padding: 50px 0px;
+  height: 400px;
+  width: 448px;
+  border: 1px solid silver;
+  overflow: scroll;
+}
+
+.sign > form{  text-align: center;}
+
+.sign > form > input{
+  margin-top: 15px;
+  width: 150px;
+  height: 30px;
+  border: 1px solid silver;
+}
+
+#RegistBtn{ width: 230px;}
+
+#moresign{
+  margin-top: 20px;
+  text-align: center;
+}
+.moresign_li{
+  width: 110px;
+  text-align: center;
+  height: 30px;
+  display:inline-flex;
+}
+.moresign_li:nth-child(2n){
+  border-left: 1px solid black;
+  width: 6px;
+}
+#moresign > a{  
+  text-decoration: none;
+  color: rgb(119, 118, 118);
+}
+#moresign > span{
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: rgb(207, 210, 215);
+}
+#moresign > p{
+  display: inline-block;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: rgb(122, 127, 134);
+  text-align: center;
+}
+.snsIcon{
+  margin:20px 30px;
+  display: flex;
+}

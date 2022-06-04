@@ -1,5 +1,5 @@
-import React from "react";
-import {Reset} from 'styled-reset'
+import React , { Component } from "react";
+import {Reset} from 'styled-reset';
 
 
 import Main from "./Main"
@@ -38,8 +38,6 @@ function App() {
     <button className="target">버튼</button>
     
     </>
-    
-   
   );
 }
 
