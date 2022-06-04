@@ -35,7 +35,7 @@ function App() {
     </Main>
     <Main index={6}>
     </Main>
-    <button className="target">버튼!</button>
+    <button className="target">버튼!!</button>
     
     </>
   );
