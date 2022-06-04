@@ -24,7 +24,7 @@ const Login = ()=>{
        <br/><br/><br/>
      
       <span></span>
-      <p> &nbsp;  SNS 계정으로 로그인 &nbsp; </p>
+      <p> &nbsp;  SNSv 계정으로 로그인 &nbsp; </p>
       <span></span>
      <br/>
       <img src="../img/login/ic_kakao.svg" alt="카카오톡" classname="snsIcon"/>
