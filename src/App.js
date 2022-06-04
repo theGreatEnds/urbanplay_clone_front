@@ -8,7 +8,6 @@ import Header from "./Header"
 import SideIndex from "./SideIndex";
 
 
-
 function App() {
   
   const http="https://cdn.imweb.me/thumbnail/"
