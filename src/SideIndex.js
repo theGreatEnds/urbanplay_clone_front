@@ -1,5 +1,6 @@
 import React from 'react'
 import './SideIndex.css'
+import { Link } from 'react-scroll'
 
 const SideIndex=()=>{
     
@@ -11,34 +12,34 @@ const SideIndex=()=>{
         <>
         <ul className='SideUl'>
             <li className='SideLi'>
-                <a href="#1">
+                <Link to="1" spy={true} smooth={true}>
                     <span className='SideIndex active' onClick={toggleIndex} ></span>
-                </a>
+                </Link>
             </li>
             <li className='SideLi'>
-                <a href="#2">
+            <Link to="2" spy={true} smooth={true}>
                     <span className='SideIndex' onClick={toggleIndex}></span>
-                </a>
+                </Link>
             </li>
             <li className='SideLi'>
-                <a href="#3">
+                <Link to="3" spy={true} smooth={true}>
                     <span className='SideIndex' onClick={toggleIndex}></span>
-                </a>
+                </Link>
             </li>
             <li className='SideLi'>
-                <a href="#4">
+                <Link to="4" spy={true} smooth={true}>
                     <span className='SideIndex' onClick={toggleIndex}></span>
-                </a>
+                </Link>
             </li>
             <li className='SideLi'>
-            <a href="#5">
+            <Link to="5" spy={true} smooth={true}>
                     <span className='SideIndex' onClick={toggleIndex}></span>
-                </a>
+                </Link>
             </li>    
             <li className='SideLi'>
-            <a href="#6">
+            <Link to="6" spy={true} smooth={true}>
                     <span className='SideIndex' onClick={toggleIndex}></span>
-                </a>
+                </Link>
             </li>   
         </ul>
         
