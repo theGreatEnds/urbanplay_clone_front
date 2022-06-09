@@ -6,11 +6,6 @@ import MainText from "./MainText";
 import Header from "./Header"
 import SideIndex from "./SideIndex";
 
-import Main from "./Main"
-import MainText from "./MainText";
-import Header from "./Header"
-import SideIndex from "./SideIndex";
-
 
 function App() {
   
