@@ -1,26 +1,41 @@
-import React from 'react'
+import { render } from '@testing-library/react';
+import React,{Component} from 'react'
 import './sign.css'
 
-const Signup = ()=>{
-return(
-<div className="sign" >
-<form  action="" method="post" name="signup" onsubmit="">
-      <label for="id">아이디 </label>
-      <input type="id" name="id"  /> <br/>
+class Signup extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
 
-      <label for="password">비밀번호 </label>
-      <input type="password" name="password" /> <br/>
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-      <label for="name">이름  &nbsp;&nbsp; </label>
-      <input type="text" name="name"  /> <br/>
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
 
-      <label for="email">이메일  </label>
-      <input type="email" name="email" /> <br/>
-
-
-      <input type="button" value="sign up" id="RegistBtn" />
-  </form>
-  </div>
-)
+render(){
+  return(
+ <div className="sign" >
+  <form  action="" method="post" name="signup" onsubmit="handleSubmit">
+        <label for="id">아이디 </label>
+        <input type="id" name="id"  /> <br/>
+  
+        <label for="password">비밀번호 </label>
+        <input type="password" name="password" /> <br/>
+  
+        <label for="name">이름  &nbsp;&nbsp; </label>
+        <input type="text" name="name"  /> <br/>
+  
+        <label for="email">이메일  </label>
+        <input type="email" name="email" /> <br/>
+  
+  
+        <input type="submit" value="Submit" id="RegistBtn" />
+    </form>
+    </div>
+);
+}
 }
 export default Signup;

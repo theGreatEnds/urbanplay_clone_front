@@ -1,17 +1,31 @@
-import React from 'react'
+import { render } from '@testing-library/react';
+import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 import './sign.css'
 
 
-const Login = ()=>{
-    return(
+class Signup extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+render(){
+  return(
     <div className="sign" >
       <form  action="" method="post" name="signin" >
           <label for="id">아이디 &nbsp;&nbsp; </label> 
           <input type="id" name="id"  /> <br/>
           <label for="password">비밀번호 </label>
           <input type="password" name="password" /><br/>
-          <input type="button" value="sign in" id="RegistBtn" />
+          <input type="submit" value="Submit" id="RegistBtn" />
       </form>
       <div id='moresign'>   
       <ul>
@@ -33,6 +47,7 @@ const Login = ()=>{
       </div>      
       </div>
 </div>
-    )
+);
 }
-export default Login;
+}
+export default Signup;
