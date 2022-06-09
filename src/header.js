@@ -7,7 +7,7 @@ const Header=()=>{
         <header className = "nav_wrap">
             <div className='header'>
                 <img className='header_logo' src='/img/main/logo.png' alt='urbanplay'></img>
-                <div className='translate'>ENG</div>
+                <div className='translate'>ENG!</div>
             </div>
             <div className='menubar'>
                 <ul className='menu_ul'>
