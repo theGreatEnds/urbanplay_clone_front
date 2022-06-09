@@ -1,6 +1,10 @@
-import React , { Component } from "react";
+import React  from "react";
 import {Reset} from 'styled-reset';
 
+import Main from "./Main"
+import MainText from "./MainText";
+import Header from "./Header"
+import SideIndex from "./SideIndex";
 
 
 
