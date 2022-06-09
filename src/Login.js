@@ -1,10 +1,34 @@
 import { render } from '@testing-library/react';
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import './sign.css'
+import SignStyle from './SignStyle';
+import styled from 'styled-components';
+
+const Input = styled.input`
+margin-top: 15px;
+width: 150px;
+height: 30px;
+border: 1px solid silver;
+`;
+const InputBtn = styled(Input)`
+width: 230px;
+`;
+const Li = styled.li`
+width: 110px;
+text-align: center;
+height: 30px;
+display:inline-flex;
+`;
+const Li2=styled(Li)`
+border-left: 1px solid black;
+width: 6px;
+`;
+const Img=styled.img`
+margin : 0 25px;
+`;
 
 
-class Signup extends React.Component {
+class Login extends React.Component {
   constructor(props){
     super(props);
     this.state = {value: ''};
@@ -17,37 +41,34 @@ class Signup extends React.Component {
     event.preventDefault();
   }
 
+  
 render(){
   return(
-    <div className="sign" >
+     <SignStyle>
       <form  action="" method="post" name="signin" >
           <label for="id">아이디 &nbsp;&nbsp; </label> 
-          <input type="id" name="id"  /> <br/>
+          <Input type="id" name="id"  /> <br/>
           <label for="password">비밀번호 </label>
-          <input type="password" name="password" /><br/>
-          <input type="submit" value="Submit" id="RegistBtn" />
+          <Input type="password" name="password" /><br/>
+          <InputBtn type="submit" value="Submit" id="RegistBtn" />
       </form>
       <div id='moresign'>   
       <ul>
-      <Link to='/Find'><li className='moresign_li'>비밀번호 찾기</li></Link>
-      <li className='moresign_li'></li> 
-      <Link to='/Signup'><li className='moresign_li'>회원가입</li></Link>
+      <Link to='/Find'><Li className='moresign_li'>비밀번호 찾기</Li></Link>
+      <Li2 className='moresign_li'></Li2> 
+      <Link to='/Signup'><Li className='moresign_li'>회원가입</Li></Link>
       </ul> 
       <br/>
-   <div> 
-       <br/><br/><br/>
-     
-      <span></span>
+
+      <div> 
       <p> &nbsp;  SNS 계정으로 로그인 &nbsp; </p>
-      <span></span>
-     <br/>
-      <img src="../img/login/ic_kakao.svg" alt="카카오톡" classname="snsIcon"/>
-      <img src="../img/login//ic_google.svg" alt="구글" classname="snsIcon"/>
-      <img src="../img/login//ic_naver.svg" alt="네이버" classname="snsIcon"/>
+      <br/>
+      <Img src="../img/login/ic_kakao.svg" alt="카카오톡" />
+      <Img src="../img/login//ic_google.svg" alt="구글" />
+      <Img src="../img/login//ic_naver.svg" alt="네이버" />
       </div>      
       </div>
-</div>
+      </SignStyle>
 );
-}
-}
-export default Signup;
+}}
+export default Login;

@@ -1,6 +1,19 @@
 import { render } from '@testing-library/react';
 import React,{Component} from 'react'
-import './sign.css'
+import styled from 'styled-components';
+import SignStyle from './SignStyle';
+
+const Input = styled.input`
+margin-top: 15px;
+width: 150px;
+height: 30px;
+border: 1px solid silver;
+`;
+
+const InputBtn = styled(Input)`
+width: 230px;
+`;
+
 
 class Signup extends React.Component {
   constructor(props){
@@ -17,24 +30,23 @@ class Signup extends React.Component {
 
 render(){
   return(
- <div className="sign" >
-  <form  action="" method="post" name="signup" onsubmit="handleSubmit">
+    <SignStyle>
+    <form action="" method="post" name="signup" onsubmit="handleSubmit">
         <label for="id">아이디 </label>
-        <input type="id" name="id"  /> <br/>
+        <Input type="id" name="id"  /> <br/>
   
         <label for="password">비밀번호 </label>
-        <input type="password" name="password" /> <br/>
+        <Input type="password" name="password" /> <br/>
   
         <label for="name">이름  &nbsp;&nbsp; </label>
-        <input type="text" name="name"  /> <br/>
+        <Input type="text" name="name"  /> <br/>
   
         <label for="email">이메일  </label>
-        <input type="email" name="email" /> <br/>
+        <Input type="email" name="email" /> <br/>
   
-  
-        <input type="submit" value="Submit" id="RegistBtn" />
+        <InputBtn type="submit" value="Submit" id="RegistBtn" />
     </form>
-    </div>
+    </SignStyle>
 );
 }
 }
