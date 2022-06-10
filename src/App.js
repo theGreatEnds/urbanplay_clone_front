@@ -1,31 +1,23 @@
 import React  from "react";
 import {Reset} from 'styled-reset';
 
-import Login from "./components/Login"
-import Signup from "./components/Signup"
-import Find from "./components/Find"
+import Bg from "./components/Bg";
 import { Routes, Route } from 'react-router-dom';
 
-import Bg from "./components/Bg";
-import Header from "./components/Header"
-import SideIndex from "./components/SideIndex";
 
-
+import Login from "./components/Login";
+import Find from "./components/Find";
+import Signup from "./components/Signup";
 function App() {
-  
-  
-
   return (
     <>
     <Reset/>
-    <Header/>
-    <SideIndex/>
     <Routes>
-      <Route path="/Login" element={<Login />}></Route>
-      <Route path="/Find" element={<Find />}></Route>
-      <Route path="/Signup" element={<Signup />}></Route>
+      <Route path="/" element={<Bg/>}></Route>
+      <Route path="/Login" element={<Login/>}></Route>
+      <Route path="/Find" element={<Find/>}></Route>
+      <Route path="/Signup" element={<Signup/>}></Route>
     </Routes>
-    <Bg/>
     </>
   );
 }

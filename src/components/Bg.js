@@ -1,6 +1,13 @@
 import React from "react";
 import Main from "./Main";
 
+
+import Header from "./Header";
+import SideIndex from "./SideIndex";
+import { Routes, Route } from 'react-router-dom';
+import Login from "./Login";
+
+
 const http="https://cdn.imweb.me/thumbnail/"
 const datas=[
     {
@@ -43,11 +50,14 @@ const datas=[
 
 function Bg(){
 return(
-<>
+<>  
+    <Header/>
+    <SideIndex/>
     {datas.map(data=>
     <Main imgurl={`${http}${data.url}`} index={data.id} key={data.id}
     title={data.title} content={data.content}/>
     )}
+    
 </>
 )
 }

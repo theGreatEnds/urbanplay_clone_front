@@ -1,47 +1,132 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
+import styled from 'styled-components';
+
+
+
+const Wrap=styled.header`
+padding: 20px 5vw 20px 5vw;
+width: 90vw;
+position: fixed;
+top: 0;
+left: 0;
+}
+`
+const Head=styled.div`
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    img{
+        width: 192px;
+        height: 20px;
+    }
+
+`
+const Menu=styled.div`
+    display: flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0px;
+    justify-content: space-between;
+    
+    }
+`
+
+const Img=styled.img`
+    width: 192px;
+    height: 20px;
+`
+
+const Trans=styled.div``
+
+const Ul=styled.ul`
+    display: flex;
+    position: relative;
+`
+const Li=styled.li`
+    width: 130px;
+    height: 50px;
+`
+
+const Name = styled.div`
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: white;
+`
+
+const Signup=styled.div`
+    position: relative;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+`
+const SignupText=styled.span`
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    padding: 5px;
+    transform: translate(-50%,-50%);
+    border: 1px solid white;
+`
 
 const Header=()=>{
     return(
-        <header className = "nav_wrap">
-            <div className='header'>
-                <img className='header_logo' src='/img/main/logo.png' alt='urbanplay'></img>
-                <div className='translate'>ENG!</div>
-            </div>
-            <div className='menubar'>
-                <ul className='menu_ul'>
-                    <li className='menu_li'>
-                        <a className='menu_name' href='/aboutos'>
-                            About OS
-                        </a>
-                    </li>
-                    <li className='menu_li'>
-                        <a className='menu_name' href='/brand'>
-                            Brand
-                        </a>
-                    </li>
-                    <li className='menu_li'>
-                        <a className='menu_name' href='/project'>
+        <Wrap>
+            <Head>
+                <Img src='/img/main/logo.png'/>
+                <Trans>ENG!</Trans>
+            </Head>
+            <Menu>
+                <Ul>
+                    <Li>
+                        <Link to='/AboutOS'>
+                            <Name>
+                                About OS
+                            </Name>
+                        </Link>
+                    </Li>
+                    <Li>
+                        <Link to='/Brand'>
+                            <Name>
+                                Brand
+                            </Name>
+                        </Link>
+                    </Li>
+                    <Li>
+                        <Link to='/Project'>
+                           <Name>
                             Project
-                        </a>
-                    </li>
-                    <li className='menu_li'>
-                        <a className='menu_name' href='/press'>
+                           </Name>
+                        </Link>
+                    </Li>
+                    <Li>
+                        <Link to='/Press'>
+                         <Name>
                             Press
-                        </a>
-                    </li>
-                    <li className='menu_li'>
-                        <a className='menu_name' href='/contact'>
+                         </Name>
+                        </Link>
+                    </Li>
+                    <Li>
+                        <Link to='/Contact'>
+                           <Name>
                             Contact
-                        </a>
-                    </li>
-                </ul>
+                           </Name>
+                        </Link>
+                    </Li>
+                </Ul>
                 <Link to='/Login' className='menu_login'>
-                    <span className='menu_login_text'>SignUp</span>
+                    <Signup>
+                        <SignupText>
+                            SignUp
+                        </SignupText>
+                    </Signup>
                 </Link>
-            </div>
-        </header>
+            </Menu>
+        </Wrap>
     )
 }
 
