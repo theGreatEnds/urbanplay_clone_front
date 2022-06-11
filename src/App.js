@@ -1,7 +1,7 @@
 import React  from "react";
 import {Reset} from 'styled-reset';
 
-import Bg from "./components/Bg";
+import Home from "./components/Home";
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -13,7 +13,7 @@ function App() {
     <>
     <Reset/>
     <Routes>
-      <Route path="/" element={<Bg/>}></Route>
+      <Route path="/" element={<Home/>}></Route>
       <Route path="/Login" element={<Login/>}></Route>
       <Route path="/Find" element={<Find/>}></Route>
       <Route path="/Signup" element={<Signup/>}></Route>
