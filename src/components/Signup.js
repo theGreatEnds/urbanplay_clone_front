@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import SignStyle from './SignStyle';
 
 const Input = styled.input`
-margin-top: 15px;
+margin-top: 30px;
 width: 150px;
 height: 30px;
 border: 1px solid silver;
 `;
 
 const InputBtn = styled(Input)`
+margin-top: 70px;
 width: 230px;
 `;
 
@@ -19,7 +20,6 @@ class Signup extends React.Component {
   constructor(props){
     super(props);
     this.state = {value: ''};
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

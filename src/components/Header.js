@@ -58,23 +58,18 @@ const Name = styled.div`
     color: white;
 `
 
-const Signup=styled.div`
-    position: relative;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-`
+const SignBox=styled.div``
 const SignupText=styled.span`
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    padding: 5px;
-    transform: translate(-50%,-50%);
+    font-size: 16px;
+    margin-left : 30px;
+   
+    color: white;
     border: 1px solid white;
 `
 
 const Header=()=>{
     return(
+        <>
         <Wrap>
             <Head>
                 <Img src='/img/main/logo.png'/>
@@ -118,15 +113,18 @@ const Header=()=>{
                         </Link>
                     </Li>
                 </Ul>
-                <Link to='/Login' className='menu_login'>
-                    <Signup>
-                        <SignupText>
-                            SignUp
-                        </SignupText>
-                    </Signup>
-                </Link>
+               
+                <SignBox>
+                 <Link to='/SignUp' className='menu_login' style={{textDecoration:'none'}}>
+                        <SignupText> &nbsp;SignUp </SignupText> 
+                 </Link>
+                 <Link to='/Login' className='menu_login' style={{textDecoration:'none'}}>
+                        <SignupText> &nbsp;Login&nbsp; </SignupText> 
+                 </Link>
+                </SignBox>
             </Menu>
-        </Wrap>
+         </Wrap>
+           </>
     )
 }
 
