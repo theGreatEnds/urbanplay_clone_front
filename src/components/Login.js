@@ -11,17 +11,23 @@ height: 30px;
 border: 1px solid silver;
 `;
 const InputBtn = styled(Input)`
+margin-top: 30px;
 width: 230px;
 `;
 const Li = styled.li`
 width: 110px;
-text-align: center;
+text-align:center;
+color: #888;
 height: 30px;
+font-size :14px;
 display:inline-flex;
 `;
 const Li2=styled(Li)`
 border-left: 1px solid black;
 width: 6px;
+height :20px;
+margin-top:10px;
+margin-right: 20px;
 `;
 const Img=styled.img`
 margin : 0 25px;
@@ -54,11 +60,11 @@ render(){
       </form>
       <div id='moresign'>   
       <ul>
-      <Link to='/Find'><Li className='moresign_li'>비밀번호 찾기</Li></Link>
+      <Link to='/Find' style={{textDecoration:'none'}}><Li className='moresign_li'>비밀번호 찾기</Li></Link>
       <Li2 className='moresign_li'></Li2> 
-      <Link to='/Signup'><Li className='moresign_li'>회원가입</Li></Link>
+      <Link to='/Signup' style={{textDecoration:'none'}}><Li className='moresign_li'> 회원가입 하기</Li></Link>
       </ul> 
-      <br/>
+      <br/><br/><br/>
 
       <div> 
       <p> &nbsp;  SNS 계정으로 로그인 &nbsp; </p>
