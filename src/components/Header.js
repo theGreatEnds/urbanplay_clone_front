@@ -72,7 +72,9 @@ const Header=()=>{
         <>
         <Wrap>
             <Head>
-                <Img src='/img/main/logo.png'/>
+                <Link to='/'>
+                    <Img src='/img/main/logo.png'/>
+                </Link>
                 <Trans>ENG!</Trans>
             </Head>
             <Menu>
