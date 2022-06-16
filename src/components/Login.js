@@ -1,9 +1,11 @@
-import { render } from '@testing-library/react';
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import Header from "./Header";
 import SignStyle from './SignStyle';
 import styled from 'styled-components';
+import axios from 'axios';
 
+//css영역
 const Input = styled.input`
 margin-top: 15px;
 width: 150px;
@@ -34,31 +36,44 @@ margin : 0 25px;
 `;
 
 
-class Login extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {value: ''};
+const Login= ()=>{
+  const url='http://96b6-61-72-188-102.ngrok.io/api/user/create/';
+  const [id,setId]=useState("")
+  const [password,setPw] = useState("");
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+  const handleSubmit=async ()=>{
+    try{
+      alert(id)
+      axios.post(url,{
+        data:{
+          id:{id},
+          password:{password},
+        }
+      })
+    }
+    catch(e){
+      console.error(e)
+    }
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
+  //reducer로변환할지 생각필요
+  const onChangeId=({target:{value}})=>setId(value)
+  const onChangePw=({target:{value}})=>setPw(value)
 
-  
-render(){
+ 
+
   return(
-     <SignStyle>
-      <form  action="" method="post" name="signin" >
-          <label for="id">아이디 &nbsp;&nbsp; </label> 
-          <Input type="id" name="id"  /> <br/>
-          <label for="password">비밀번호 </label>
-          <Input type="password" name="password" /><br/>
+  <>
+    <Header/>
+    <SignStyle>
+      <form  action={`${url}`} method="post" name="signin" onSubmit={handleSubmit}>
+          <label htmlFor="id">아이디 &nbsp;&nbsp; </label> 
+          <Input type="id" name="id" value={id} onChange={onChangeId} /> <br/>
+          <label htmlFor="password">비밀번호 </label>
+          <Input type="password" name="password" value={password} onChange={onChangePw}/><br/>
           <InputBtn type="submit" value="Submit" id="RegistBtn" />
       </form>
-      <div id='moresign'>   
+    <div id='moresign'>   
       <ul>
       <Link to='/Find' style={{textDecoration:'none'}}><Li className='moresign_li'>비밀번호 찾기</Li></Link>
       <Li2 className='moresign_li'></Li2> 
@@ -74,7 +89,9 @@ render(){
       <Img src="../img/login//ic_naver.svg" alt="네이버" />
       </div>      
       </div>
-      </SignStyle>
-);
-}}
+    </SignStyle>
+  </>)
+  
+}
+
 export default Login;

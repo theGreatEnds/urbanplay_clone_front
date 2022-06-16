@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import React,{Component} from 'react'
 import styled from 'styled-components';
 import SignStyle from './SignStyle';
+import Header from './Header';
 
 const Input = styled.input`
 margin-top: 30px;
@@ -24,14 +25,17 @@ class Signup extends React.Component {
   }
 
   handleSubmit(event) {
+    console.log(this.state.value)
     alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
   }
 
 render(){
   return(
+    <>
+    <Header/>
     <SignStyle>
-    <form action="" method="post" name="signup" onsubmit="handleSubmit">
+    <form action="" method="post" name="signup" onsubmit={this.handleSubmit}>
         <label for="id">아이디 </label>
         <Input type="id" name="id"  /> <br/>
   
@@ -47,6 +51,7 @@ render(){
         <InputBtn type="submit" value="Submit" id="RegistBtn" />
     </form>
     </SignStyle>
+    </>
 );
 }
 }
