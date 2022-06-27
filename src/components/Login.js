@@ -37,18 +37,15 @@ margin : 0 25px;
 
 
 const Login= ()=>{
-  const url='http://96b6-61-72-188-102.ngrok.io/api/user/create/';
+  const url='http://localhost:8000/api/token/obtain';
   const [id,setId]=useState("")
   const [password,setPw] = useState("");
 
   const handleSubmit=async ()=>{
     try{
-      alert(id)
       axios.post(url,{
-        data:{
-          id:{id},
-          password:{password},
-        }
+        username:{id},
+        password:{password},
       })
     }
     catch(e){

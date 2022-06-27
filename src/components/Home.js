@@ -4,10 +4,10 @@ import Main from "./Main";
 
 import Header from "./Header";
 import SideIndex from "./SideIndex";
-
+import $ from 'jquery';
 
 const http="https://cdn.imweb.me/thumbnail/"
-export const datas=[
+const datas=[
     {
         id:1,
         url:'20210818/cb7dd9025a008.png',
@@ -44,6 +44,35 @@ export const datas=[
         content:'콘텐츠의 가치가 비즈니스적인 가치로 이어져 지속적인 비즈니스가 이루어질 수 있도록 합니다.',
     },
 ]
+
+window.addEventListener("wheel", function(e){
+    e.preventDefault();
+},{passive : false});
+
+var $html=$("html")
+$html.css('overflow','hidden');
+var page = 1;
+var lastpage = 6;
+$html.animate({scrollTop:0},10);
+
+$(window).on("wheel",function(e){
+    if($html.is(":animated")) return;
+
+    if(e.originalEvent.deltaY>0){
+        if(page === lastpage) return;
+        page++;
+        console.log("+")
+        
+    }
+    else if(e.originalEvent.deltaY<0){
+        if(page === 1) return;
+		page--;
+        
+    }
+    var posTop=(page-1)*($(window).innerHeight());
+    $html.animate({scrollTop:posTop})
+    console.log(posTop)
+})
 
 function Home(){
 return(

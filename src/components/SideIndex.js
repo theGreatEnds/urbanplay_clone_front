@@ -31,7 +31,7 @@ const SideIndex=()=>{
                 </Link>
             </SideLi>
             <SideLi>
-            <Link to="2" spy={true} smooth={true}>
+                <Link to="2" spy={true} smooth={true}>
                     <Index/>
                 </Link>
             </SideLi>
@@ -46,12 +46,12 @@ const SideIndex=()=>{
                 </Link>
             </SideLi>
             <SideLi>
-            <Link to="5" spy={true} smooth={true}>
+                <Link to="5" spy={true} smooth={true}>
                     <Index/>
                 </Link>
             </SideLi> 
             <SideLi>
-            <Link to="6" spy={true} smooth={true}>
+                <Link to="6" spy={true} smooth={true}>
                     <Index/>
                 </Link>
             </SideLi>
