@@ -1,5 +1,7 @@
-import React, {Component}  from 'react';
+import React,{useState} from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
+import Header from './Header'
 import SignStyle from './SignStyle';
 
 const Input = styled.input`
@@ -12,35 +14,46 @@ const InputBtn = styled(Input)`
 width: 230px;
 `;
 
-class Find extends React.Component {
-    constructor(props){
-      super(props);
-      this.state = {value: ''};
-  
-      this.handleSubmit = this.handleSubmit.bind(this);
+const Find =()=>{
+  const url = 'http://localhost:8000/api/token/obtain'
+  //reducer로처리할지생각
+  const [id,setId]=useState("")
+  const [name,setName] = useState("")
+
+  const handlesubmit=async ()=>{
+    try{
+      axios.post(url,{
+        username:{id},
+        name:{name},
+      })
     }
-  
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
+    catch(e){
+      console.error(e)
     }
-  
-    
-  render(){
-    return(
-        <SignStyle>
-        <form action="" method="post" name="findPW">
+  }
+
+  //useReducer사용?
+  const onChangeId=({target:{value}})=>setId(value)
+  const onChangeName=({target:{value}})=>setName(value)
+  return(
+    <>
+      <Header/>
+      <SignStyle>
+        <form action="" method="post" name="findPW" onsubmit={handlesubmit}>
         
-        <label for="id">아이디 입력 : </label>
-        <Input type="id" name="id"  /> <br/>
+        <label htmlFor="id">아이디 입력 : </label>
+        <Input type="id" name="id" onChange={onChangeId}/> <br/>
         
-        <label for="name">이름 입력  : </label>
-        <Input type="text" name="name"  /> <br/>
+        <label htmlFor="name">이름 입력 : </label>
+        <Input type="text" name="name" onChange={onChangeName}/> <br/>
         
         <br/>
         <InputBtn type="submit" value="Submit" id="RegistBtn" />
         </form>
-        </SignStyle>
-  );
-  }}
+      </SignStyle>
+    </>
+  )
+}
+
+
   export default Find;

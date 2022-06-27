@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 
 
+
 const Wrap=styled.header`
 padding: 20px 5vw 20px 5vw;
 width: 90vw;
@@ -13,7 +14,6 @@ left: 0;
 }
 `
 const Head=styled.div`
-    position: relative;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -21,16 +21,17 @@ const Head=styled.div`
         width: 192px;
         height: 20px;
     }
-
 `
-const Menu=styled.div`
+
+const Menus=styled.div`
     display: flex;
     font-size: 14px;
     font-style: normal;
     font-weight: bold;
     letter-spacing: 0px;
+    align-items:center;
+   height:50px;
     justify-content: space-between;
-    
     }
 `
 
@@ -47,18 +48,17 @@ const Ul=styled.ul`
 `
 const Li=styled.li`
     width: 130px;
-    height: 50px;
+    height: 100%;
 `
 
-const Name = styled.div`
-    position:absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-decoration: none;
+const Menu = styled.div`
+    
     color: white;
 `
 
-const SignBox=styled.div``
+const SignBox=styled.div`
+margin-top:0px;
+`
 const SignupText=styled.span`
     font-size: 16px;
     margin-left : 30px;
@@ -77,41 +77,41 @@ const Header=()=>{
                 </Link>
                 <Trans>ENG!</Trans>
             </Head>
-            <Menu>
+            <Menus>
                 <Ul>
                     <Li>
-                        <Link to='/AboutOS'>
-                            <Name>
+                        <Link to='/AboutOS' style={{textDecoration:'none'}}>
+                            <Menu>
                                 About OS
-                            </Name>
+                            </Menu>
                         </Link>
                     </Li>
                     <Li>
-                        <Link to='/Brand'>
-                            <Name>
+                        <Link to='/Brand' style={{textDecoration:'none'}}>
+                            <Menu>
                                 Brand
-                            </Name>
+                            </Menu>
                         </Link>
                     </Li>
                     <Li>
-                        <Link to='/Project'>
-                           <Name>
+                        <Link to='/Project' style={{textDecoration:'none'}}>
+                           <Menu>
                             Project
-                           </Name>
+                           </Menu>
                         </Link>
                     </Li>
                     <Li>
-                        <Link to='/Press'>
-                         <Name>
+                        <Link to='/Press' style={{textDecoration:'none'}}>
+                         <Menu>
                             Press
-                         </Name>
+                         </Menu>
                         </Link>
                     </Li>
                     <Li>
-                        <Link to='/Contact'>
-                           <Name>
+                        <Link to='/Contact' style={{textDecoration:'none'}}>
+                           <Menu>
                             Contact
-                           </Name>
+                           </Menu>
                         </Link>
                     </Li>
                 </Ul>
@@ -124,7 +124,8 @@ const Header=()=>{
                         <SignupText> &nbsp;Login&nbsp; </SignupText> 
                  </Link>
                 </SignBox>
-            </Menu>
+            </Menus>
+            
          </Wrap>
            </>
     )
