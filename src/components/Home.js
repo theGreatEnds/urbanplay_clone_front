@@ -62,19 +62,26 @@ function Home(){
         if(e.originalEvent.deltaY>0){
             if(page === lastpage) return;
             page++
+            console.log(page)
         }
         else if(e.originalEvent.deltaY<0){
             if(page === 1) return;
             page--
+            console.log(page)
         }
         var posTop=(page-1)*($(window).height());
         $html.animate({scrollTop:posTop})
         
     })    
 
+    const abc=()=>{
+        console.log(page)
+    }
+
     const [fi,setFi]=useState($(window).height())
     const resetFi = ()=>{
         setFi($(window).height())
+        console.log(page)
     }
 
     useEffect(()=>{
@@ -88,10 +95,12 @@ return(
 <>  
     <Header/>
     <SideIndex/>
+    <button onClick={abc} style={{height:'200px',zIndex:'1000000',position:'fixed'}}>gggggg</button>
     {datas.map(data=>
     <Main imgurl={`${http}${data.url}`} index={data.id} key={data.id}
     title={data.title} content={data.content} hi={fi}/>
     )}
+     
     
 </>
 )
