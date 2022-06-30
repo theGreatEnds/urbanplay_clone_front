@@ -37,14 +37,14 @@ margin : 0 25px;
 
 
 const Login= ()=>{
-  const url='http://localhost:8000/api/token/obtain';
-  const [id,setId]=useState("")
+  const url='http://localhost:8000/api/token/obtain/';
+  const [username,setUsername]=useState("")
   const [password,setPw] = useState("");
 
   const handleSubmit=async ()=>{
     try{
       axios.post(url,{
-        username:{id},
+        username:{username},
         password:{password},
       })
     }
@@ -54,7 +54,7 @@ const Login= ()=>{
   }
 
   //reducer로변환할지 생각필요
-  const onChangeId=({target:{value}})=>setId(value)
+  const onChangeUsername=({target:{value}})=>setUsername(value)
   const onChangePw=({target:{value}})=>setPw(value)
 
  
@@ -64,8 +64,8 @@ const Login= ()=>{
     <Header/>
     <SignStyle>
       <form  action={`${url}`} method="post" name="signin" onSubmit={handleSubmit}>
-          <label htmlFor="id">아이디 &nbsp;&nbsp; </label> 
-          <Input type="id" name="id" value={id} onChange={onChangeId} /> <br/>
+          <label htmlFor="username">아이디 &nbsp;&nbsp; </label> 
+          <Input type="username" name="username" value={username} onChange={onChangeUsername} /> <br/>
           <label htmlFor="password">비밀번호 </label>
           <Input type="password" name="password" value={password} onChange={onChangePw}/><br/>
           <InputBtn type="submit" value="Submit" id="RegistBtn" />

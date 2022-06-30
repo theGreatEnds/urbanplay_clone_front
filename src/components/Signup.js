@@ -19,9 +19,9 @@ width: 230px;
 `;
 
 const Signup=()=>{
-  const url = 'http://localhost:8000/api/token/obtain'
+  const url = 'http://localhost:8000/api/token/obtain/'
   //reducer로처리할지생각
-  const [id,setId]=useState("")
+  const [username,setUsername]=useState("")
   const [password,setPw] = useState("");
   const [name,setName] = useState("");
   const [email,setEmail]=useState("")
@@ -29,7 +29,7 @@ const Signup=()=>{
   const handlesubmit=async ()=>{
     try{
       axios.post(url,{
-        username:{id},
+        username:{username},
         password:{password},
         name:{name},
         email:{email},
@@ -41,7 +41,7 @@ const Signup=()=>{
   }
 
   //useReducer사용?
-  const onChangeId=({target:{value}})=>setId(value)
+  const onChangeUsername=({target:{value}})=>setUsername(value)
   const onChangePw=({target:{value}})=>setPw(value)
   const onChangeName=({target:{value}})=>setName(value)
   const onChangeEmail=({target:{value}})=>setEmail(value)
@@ -52,8 +52,8 @@ const Signup=()=>{
     <Header/>
     <SignStyle>
     <form action="" method="post" name="signup" onsubmit={handlesubmit}>
-        <label htmlFor="id">아이디 </label>
-        <Input type="id" name="id" onChange={onChangeId} /> <br/>
+        <label htmlFor="username">아이디 </label>
+        <Input type="username" name="username" onChange={onChangeUsername} /> <br/>
   
         <label htmlFor="password">비밀번호 </label>
         <Input type="password" name="password" onChange={onChangePw}/> <br/>

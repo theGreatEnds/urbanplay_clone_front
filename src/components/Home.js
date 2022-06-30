@@ -53,7 +53,7 @@ function Home(){
     
     var $html=$("html")
     $html.css('overflow','hidden');
-    var page = 1;
+    var page =1
     var lastpage = 6;
     $html.animate({scrollTop:0},10);
     $(window).on("wheel",function(e){
@@ -61,13 +61,11 @@ function Home(){
     
         if(e.originalEvent.deltaY>0){
             if(page === lastpage) return;
-            page++;
-            console.log(page)
+            page++
         }
         else if(e.originalEvent.deltaY<0){
             if(page === 1) return;
-            page--;
-            console.log(page)
+            page--
         }
         var posTop=(page-1)*($(window).height());
         $html.animate({scrollTop:posTop})
@@ -77,7 +75,6 @@ function Home(){
     const [fi,setFi]=useState($(window).height())
     const resetFi = ()=>{
         setFi($(window).height())
-        console.log(page)
     }
 
     useEffect(()=>{
