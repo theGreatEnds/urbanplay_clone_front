@@ -1,4 +1,5 @@
 import React from "react"
+import $ from 'jquery'
 import styled from "styled-components"
 
 const Wrap=styled.div`
@@ -6,7 +7,7 @@ const Wrap=styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 722px;
+    height: ${props=>props.height}px;
     background-position: 50% 50%;
     
 `
@@ -29,11 +30,11 @@ const TextWrap=styled.div`
     }
 `
 
-const Main = ({imgurl,index,title,content})=>{
+const Main = ({imgurl,index,title,content,hi})=>{
     const align = index %2 ? 'left' : 'right'
     return(
         <>
-        <Wrap imgurl={imgurl} id={index} >
+        <Wrap imgurl={imgurl} id={index} height={hi}>
             <TextWrap align={align}>
                 <h2>
                     {title}

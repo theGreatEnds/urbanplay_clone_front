@@ -1,10 +1,9 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
+import $ from 'jquery';
+
 import Main from "./Main";
-
-
 import Header from "./Header";
 import SideIndex from "./SideIndex";
-import $ from 'jquery';
 
 const http="https://cdn.imweb.me/thumbnail/"
 const datas=[
@@ -45,43 +44,56 @@ const datas=[
     },
 ]
 
-window.addEventListener("wheel", function(e){
-    e.preventDefault();
-},{passive : false});
-
-var $html=$("html")
-$html.css('overflow','hidden');
-var page = 1;
-var lastpage = 6;
-$html.animate({scrollTop:0},10);
-
-$(window).on("wheel",function(e){
-    if($html.is(":animated")) return;
-
-    if(e.originalEvent.deltaY>0){
-        if(page === lastpage) return;
-        page++;
-        console.log("+")
-        
-    }
-    else if(e.originalEvent.deltaY<0){
-        if(page === 1) return;
-		page--;
-        
-    }
-    var posTop=(page-1)*($(window).innerHeight());
-    $html.animate({scrollTop:posTop})
-    console.log(posTop)
-})
 
 function Home(){
+
+    window.addEventListener("wheel", function(e){
+        e.preventDefault();
+    },{passive : false});
+    
+    var $html=$("html")
+    $html.css('overflow','hidden');
+    var page = 1;
+    var lastpage = 6;
+    $html.animate({scrollTop:0},10);
+    $(window).on("wheel",function(e){
+        if($html.is(":animated")) return;
+    
+        if(e.originalEvent.deltaY>0){
+            if(page === lastpage) return;
+            page++;
+            console.log(page)
+        }
+        else if(e.originalEvent.deltaY<0){
+            if(page === 1) return;
+            page--;
+            console.log(page)
+        }
+        var posTop=(page-1)*($(window).height());
+        $html.animate({scrollTop:posTop})
+        
+    })    
+
+    const [fi,setFi]=useState($(window).height())
+    const resetFi = ()=>{
+        setFi($(window).height())
+        console.log(page)
+    }
+
+    useEffect(()=>{
+        window.addEventListener('resize',resetFi)
+        return ()=>{
+            window.removeEventListener('resize',resetFi)    
+        }
+    },[])
+   
 return(
 <>  
     <Header/>
     <SideIndex/>
     {datas.map(data=>
     <Main imgurl={`${http}${data.url}`} index={data.id} key={data.id}
-    title={data.title} content={data.content} />
+    title={data.title} content={data.content} hi={fi}/>
     )}
     
 </>
