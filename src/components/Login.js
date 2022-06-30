@@ -81,9 +81,9 @@ const Login= ()=>{
       <div> 
       <p> &nbsp;  SNS 계정으로 로그인 &nbsp; </p>
       <br/>
-      <Img src="../img/login/ic_kakao.svg" alt="카카오톡" />
-      <Img src="../img/login//ic_google.svg" alt="구글" />
-      <Img src="../img/login//ic_naver.svg" alt="네이버" />
+      <Img src={process.env.PUBLIC_URL + 'img/login/ic_kakao.svg'} />
+      <Img src={process.env.PUBLIC_URL + 'img/login/ic_google.svg'} />
+      <Img src={process.env.PUBLIC_URL + 'img/login/ic_naver.svg'} />
       </div>      
       </div>
     </SignStyle>

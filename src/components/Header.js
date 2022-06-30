@@ -73,7 +73,7 @@ const Header=()=>{
         <Wrap>
             <Head>
                 <Link to='/'>
-                    <Img src='/img/main/logo.png'/>
+                    <Img src={process.env.PUBLIC_URL + '/img/main/logo.png'} /> 
                 </Link>
                 <Trans>ENG!</Trans>
             </Head>
