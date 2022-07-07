@@ -2,6 +2,7 @@ import React from 'react';
 import PressItem from './PressItem';
 import { useState } from '../PressContext';
 import { createGlobalStyle } from 'styled-components';
+import Header from './Header';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -9,13 +10,16 @@ const GlobalStyle = createGlobalStyle`
     background-color: black;
     color: white;
     font-size: 12px;    
+    margin-top: 150px;
   }
 `;
+
 
 function Press() {
   const items = useState();
     return (
    <>
+   <Header/>
    <GlobalStyle/>
       {items.map(item => (             
         <PressItem
