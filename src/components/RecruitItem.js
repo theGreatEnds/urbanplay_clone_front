@@ -4,11 +4,7 @@ import styled from 'styled-components';
 const Group = styled.div`
   border-top:0px;
   border-top: 1px solid #262626;
-  background-color: black;
-  color:white;
-  font-size: 12px;  
-  font-family: 'helvetica','GothicA1','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic', 'Noto Sans','sans-serif';
-`;
+ `;
 const Span = styled.div`
 font-weight: 900;
 font-size: 16px;

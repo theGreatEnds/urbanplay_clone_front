@@ -9,6 +9,7 @@ const Nont = styled.li`
 display: inline-block;
 list-style: none;
 color:rgba(201, 224, 253, 0.3);
+line-height:25px;
 width: 15%;`;
 const Ul= styled.ul`
 padding: 10px 15px 15px 15px;

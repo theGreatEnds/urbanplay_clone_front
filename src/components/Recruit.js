@@ -1,15 +1,27 @@
 import React from 'react';
 import RecruitItem from './RecruitItem';
 import { useState } from '../RecruitContext';
+import { createGlobalStyle } from 'styled-components';
+import Header from './Header';
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'helvetica','GothicA1','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic', 'Noto Sans','sans-serif';
+    background-color: black;
+    color: white;
+    font-size: 12px;    
+    margin-top: 150px;
+  }
+`;
 
-//header랑 추가설명 부분 공간 만들기
-//header 문의하기 올릴 수 있게 수정
+//임시로 header지정
 function Recruit() {
   const todos = useState();
     return (
-    <>
-      {todos.map(todo => (
+    <>    
+      <Header/>
+      <GlobalStyle/>
+      {todos.map(todo => (      
         <RecruitItem
           key={todo.id}
           id={todo.id}
