@@ -48,7 +48,6 @@ const Signup=()=>{
 
   return( 
   <>
-
     <Header/>
     <SignStyle>
     <form action="" method="post" name="signup" onsubmit={handlesubmit}>
