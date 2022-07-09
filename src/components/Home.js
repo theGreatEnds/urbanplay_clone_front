@@ -52,53 +52,49 @@ function Home(){
     },{passive : false});
     
     var $html=$("html")
-    $html.css('overflow','hidden');
-    var page =1
-    var lastpage = 6;
     $html.animate({scrollTop:0},10);
-    $(window).on("wheel",function(e){
+
+    const [height,setHeight]=useState($(window).height())
+    var page = 1
+    const resetHeight = ()=>{
+        setHeight($(window).height())
+    }
+
+    const movePage=(e)=>{
         if($html.is(":animated")) return;
-    
+
         if(e.originalEvent.deltaY>0){
-            if(page === lastpage) return;
+            if(page === 6) return;
             page++
-            console.log(page)
         }
         else if(e.originalEvent.deltaY<0){
             if(page === 1) return;
             page--
-            console.log(page)
         }
         var posTop=(page-1)*($(window).height());
         $html.animate({scrollTop:posTop})
-        
-    })    
-
-    const abc=()=>{
-        console.log(page)
     }
-
-    const [fi,setFi]=useState($(window).height())
-    const resetFi = ()=>{
-        setFi($(window).height())
-        console.log(page)
-    }
-
+    $(window).on(
+    {
+        wheel:movePage,
+        resize:resetHeight,
+    })
     useEffect(()=>{
-        window.addEventListener('resize',resetFi)
+        $html.css('overflow','hidden');
         return ()=>{
-            window.removeEventListener('resize',resetFi)    
+            window.removeEventListener('resize',resetHeight)
+            
+            $html.css('overflow','auto');    
         }
-    },[])
+    },[$html,height,page])
    
 return(
 <>  
     <Header/>
     <SideIndex/>
-    <button onClick={abc} style={{height:'200px',zIndex:'1000000',position:'fixed'}}>gggggg</button>
     {datas.map(data=>
     <Main imgurl={`${http}${data.url}`} index={data.id} key={data.id}
-    title={data.title} content={data.content} hi={fi}/>
+    title={data.title} content={data.content} hi={height}/>
     )}
      
     
