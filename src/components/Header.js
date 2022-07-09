@@ -1,6 +1,7 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Pc } from './common/MediaQuery';
 
 
 
@@ -52,17 +53,15 @@ const Li=styled.li`
 `
 
 const Menu = styled.div`
-    
     color: white;
 `
 
 const SignBox=styled.div`
+display:flex;
 margin-top:0px;
 `
 const SignupText=styled.span`
-    font-size: 16px;
     margin-left : 30px;
-   
     color: white;
     border: 1px solid white;
 `
@@ -70,6 +69,7 @@ const SignupText=styled.span`
 const Header=()=>{
     return(
         <>
+        <Pc>
         <Wrap>
             <Head>
                 <Link to='/'>
@@ -127,6 +127,7 @@ const Header=()=>{
             </Menus>
             
          </Wrap>
+         </Pc>
            </>
     )
 }
